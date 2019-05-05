@@ -44,6 +44,10 @@ namespace WPF
 
             SumObj = new Sum { Num1 = "1", Num2 = "2" };
             this.DataContext = SumObj;
+
+            List<Match> matches = new List<Match>();
+            matches.Add(new Match() { Team1 = "Bayern Munich", Team2 = "Real Madrid", Score1 = 5, Score2 = 3, Completion = 85 });
+            lbMatches.ItemsSource = matches;
         }
 
         private void FirstButton_Click(object sender, RoutedEventArgs e)
@@ -54,6 +58,15 @@ namespace WPF
         private void SecondButton_MouseUp(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Second button clicked", "Event raised", MessageBoxButton.OK);
+        }
+
+        private void ShotMatchDetails_Click(object sender, RoutedEventArgs e)
+        {
+            if (lbMatches.SelectedItem != null)
+            {
+                MessageBox.Show("Selected match: "
+                    + (lbMatches.SelectedItem as Match).ToString());
+            }
         }
     }
 }
