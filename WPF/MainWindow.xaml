@@ -1,0 +1,70 @@
+﻿<Window x:Class="WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button
+            Grid.Row="0"
+            Grid.Column="0"
+            Content="First button"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            FontSize="10"
+            
+            Click="FirstButton_Click" Width="100" Height="50">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontSize" Value="10"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="secondButton"
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            FontSize="32">
+            <Button.Content>
+                <WrapPanel>
+                    <TextBlock Text="Red" Foreground="Red" />
+                    <TextBlock Text="Blue" Margin="20,0,20,0" Foreground="Blue"/>
+                    <TextBlock Text="Green" Foreground="Green"/>
+                </WrapPanel>
+            </Button.Content>
+        </Button>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <!-- Text box is target, slider is source -->
+            <TextBox Width="100" Margin="50" Text="{Binding ElementName=MySlider, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Slider Name="MySlider" Minimum="0" Maximum="100" Value="50" IsSnapToTickEnabled="True"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Content="Num1"/>
+            <TextBox Width="100" Height="30" Text="{Binding Path=Num1, Mode=TwoWay}" />
+            <Label Content="Nam2"/>
+            <TextBox Width="100" Height="30" Text="{Binding Path=Num2, Mode=TwoWay}" />
+            <Label Content="Result"/>
+            <TextBox Width="100" Height="30" Text="{Binding Path=Result, Mode=TwoWay}" />
+        </StackPanel>
+    </Grid>
+</Window>
