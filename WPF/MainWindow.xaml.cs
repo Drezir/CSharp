@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -55,9 +56,13 @@ namespace WPF
             MessageBox.Show("Hello World", "Hello World", MessageBoxButton.OK);
         }
 
-        private void SecondButton_MouseUp(object sender, MouseButtonEventArgs e)
+        private async void SecondButton_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Second button clicked", "Event raised", MessageBoxButton.OK);
+            await Task.Run(async () =>
+            {
+                Thread.Sleep(1000);
+                MessageBox.Show("Second button clicked", "Event raised", MessageBoxButton.OK);
+            });
         }
 
         private void ShotMatchDetails_Click(object sender, RoutedEventArgs e)

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basics", "Lambda\Basics.csproj", "{BF4D5922-5E02-44D7-9F13-B606C9371497}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basics", "Lambda\Basics.csproj", "{BF4D5922-5E02-44D7-9F13-B606C9371497}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF", "WPF\WPF.csproj", "{A218BFCA-855C-41B9-9413-A5A132193442}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threads", "Threads\Threads.csproj", "{BEA39384-D83C-423B-8AE7-DD673FDF3F8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A218BFCA-855C-41B9-9413-A5A132193442}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A218BFCA-855C-41B9-9413-A5A132193442}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A218BFCA-855C-41B9-9413-A5A132193442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA39384-D83C-423B-8AE7-DD673FDF3F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA39384-D83C-423B-8AE7-DD673FDF3F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA39384-D83C-423B-8AE7-DD673FDF3F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA39384-D83C-423B-8AE7-DD673FDF3F8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
